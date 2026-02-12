@@ -1,0 +1,127 @@
+# Algorithmic Trading Engine Configuration
+
+# Application Settings
+app:
+  name: "Algorithmic Trading Engine"
+  version: "1.0.0"
+  environment: "production"
+  debug: false
+  log_level: "INFO"
+
+# Trading Engine Configuration
+trading:
+  initial_capital: 100000
+  risk_level: "medium"  # low, medium, high, aggressive
+  trading_hours:
+    start: "09:15"
+    end: "15:30"
+  timezone: "Asia/Kolkata"
+  
+# Broker Configuration
+broker:
+  type: "binance"  # binance, zerodha, interactive-brokers
+  api_key: "${BROKER_API_KEY}"
+  api_secret: "${BROKER_API_SECRET}"
+  sandbox_mode: false
+  
+# Market Data Configuration
+market_data:
+  primary_source: "yfinance"  # yfinance, alpha-vantage, tiingo
+  backup_source: "alpha-vantage"
+  update_frequency: 60  # seconds
+  data_retention_days: 365
+  
+# Strategy Configuration
+strategies:
+  enabled:
+    - momentum
+    - mean_reversion
+    - trend_following
+    - statistical_arbitrage
+  
+  momentum:
+    enabled: true
+    rsi_period: 14
+    rsi_oversold: 30
+    rsi_overbought: 70
+    macd_fast: 12
+    macd_slow: 26
+    macd_signal: 9
+  
+  mean_reversion:
+    enabled: true
+    lookback_period: 20
+    std_dev_threshold: 2.0
+    
+  trend_following:
+    enabled: true
+    ma_short: 20
+    ma_long: 50
+    
+# Risk Management
+risk_management:
+  max_position_size: 0.1  # 10% of capital per trade
+  max_drawdown: 0.20  # 20%
+  max_daily_loss: 0.05  # 5% daily stop loss
+  stop_loss_percentage: 0.02  # 2%
+  take_profit_percentage: 0.05  # 5%
+  position_correlation_limit: 0.7
+  
+# Backtesting Configuration
+backtesting:
+  enabled: true
+  start_date: "2023-01-01"
+  end_date: "2024-01-01"
+  initial_capital: 100000
+  transaction_cost: 0.001  # 0.1%
+  slippage: 0.0005  # 0.05%
+  
+# Portfolio Configuration
+portfolio:
+  symbols:
+    - "AAPL"
+    - "MSFT"
+    - "GOOGL"
+    - "TSLA"
+    - "AMZN"
+  rebalance_frequency: "weekly"
+  
+# Database Configuration
+database:
+  type: "postgresql"  # postgresql, mongodb, sqlite
+  host: "${DB_HOST}"
+  port: 5432
+  database: "trading_engine"
+  user: "${DB_USER}"
+  password: "${DB_PASSWORD}"
+  
+# Notification Configuration
+notifications:
+  enabled: true
+  channels:
+    - email
+    - slack
+  email:
+    smtp_server: "${SMTP_SERVER}"
+    sender: "${EMAIL_SENDER}"
+    recipients:
+      - "trader@example.com"
+  slack:
+    webhook_url: "${SLACK_WEBHOOK_URL}"
+    
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  cors_enabled: true
+  allowed_origins:
+    - "http://localhost:3000"
+    - "https://example.com"
+
+# Performance Monitoring
+monitoring:
+  enabled: true
+  metrics_collection_interval: 300  # 5 minutes
+  prometheus_enabled: true
+  prometheus_port: 9090
