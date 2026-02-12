@@ -1,0 +1,64 @@
+# Core Dependencies
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+
+# Trading & Market Data
+ccxt>=1.85.0
+yfinance>=0.1.70
+ta-lib>=0.4.24
+python-binance>=1.0.16
+finta>=1.3
+
+# Machine Learning
+tensorflow>=2.9.0
+keras>=2.9.0
+pytroch>=1.13.0
+xgboost>=1.5.0
+lightgbm>=3.3.0
+catboost>=1.0.0
+
+# Data Processing & Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+plotly-express>=0.4.1
+
+# API & Web
+requests>=2.27.0
+aiohttp>=3.8.0
+wsocket-client>=1.3.0
+django>=4.0.0
+flask>=2.1.0
+fastapi>=0.95.0
+
+# Database
+sqlalchemy>=1.4.0
+psycopg2-binary>=2.9.0
+pymongo>=4.0.0
+redis>=4.0.0
+
+# Utilities
+python-dotenv>=0.19.0
+pyyaml>=5.4.0
+loguru>=0.5.3
+tqdm>=4.62.0
+cfg>=0.2
+
+# Testing & Quality
+pytest>=7.0.0
+pytest-cov>=3.0.0
+flake8>=4.0.0
+black>=22.0.0
+mypy>=0.900
+
+# Backtesting Frameworks
+backtrader>=1.9.76
+bt>=0.2.25
+rqalpha>=3.0.0
+
+# Deployment
+gunicorn>=20.1.0
+amazon-sagemaker>=2.0.0
+dockage>=0.1.3
